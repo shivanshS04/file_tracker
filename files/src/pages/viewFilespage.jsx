@@ -52,8 +52,8 @@ function ViewFiles(){
     const [rowDetails, setRowDetails] = useState()
 
     function adjustCommand(pageData){
-        if(pageData == 'inbox') return (`select files.fileId , filename,erpId, department, createdDate, closeDate , createdBy from files,${department}_inbox where files.fileId = ${department}_inbox.fileId`)
-    else if(pageData == 'outbox') return (`select files.fileId , filename,erpId, department, createdDate, closeDate , createdBy from files,${department}_outbox where files.fileId = ${department}_outbox.fileId`)
+        if(pageData == 'inbox') return (`select files.fileId , filename,erpId, department,createdDepartment, createdDate, closeDate , createdBy from files,${department}_inbox where files.fileId = ${department}_inbox.fileId`)
+    else if(pageData == 'outbox') return (`select files.fileId , filename,erpId, department,createdDepartment, createdDate, closeDate , createdBy from files,${department}_outbox where files.fileId = ${department}_outbox.fileId`)
         else return ('select * from files')
     }
 
