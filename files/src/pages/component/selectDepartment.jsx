@@ -32,7 +32,7 @@ const data=  [
 function SelectDepartment({setDepartment}){
     return (
     <div className="selectDepartment">
-            <select value='' onChange={(e) => setDepartment(e.target.value)} >
+            <select onChange={(e) => setDepartment(e.target.value)} >
             <option value='' >--select-department--</option>
             {data.map((item,index)=>{
               return <option value={item.replace(' ', '_')} key={index}>{item}</option>

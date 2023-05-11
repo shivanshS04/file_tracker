@@ -1,13 +1,22 @@
 import React from 'react'
+import {useNavigate} from  'react-router-dom'
 import { FaRegWindowClose } from 'react-icons/fa'
 
 function Settings ({openModal})  {
+    const navigate = useNavigate()
     return (
         <div className="prompt-main">
             <button onClick={()=>openModal(false)} className="closeBtn" ><FaRegWindowClose /></button>
             <div className="prompt-container">
-                <div className="prompt-title">
-                        <h1>Settings</h1>
+            <div className="prompt-title">
+                    <h2>Settings</h2>
+                    <div className="actions">
+                        <button className="actionBtn" onClick={()=> {
+                            localStorage.clear()
+                            navigate('/')
+                            window.location.reload()
+                        }}>Log Out</button>
+                    </div>    
                 </div>
                 <div className="prompt-body">
                     <div className="userDetails">

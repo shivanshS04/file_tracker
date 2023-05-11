@@ -48,20 +48,20 @@ body{
     border: 1px solid;
     width: 150px;
     height:30px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     color: wheat;
     font-size: 15px;
     font-family: 'Segoe UI';
-
+    font-weight: bold;
     cursor: pointer;
-
+    text-align: center;
 }
 
 .linkBtn:hover{
-    background-color: black ;
+    background-color:black  ;
     color: wheat;
-    transform: translate(-10px,-10px);
-    box-shadow: 10px 10px wheat;
+    border-radius : 50px;
+    transition: all 200ms linear ;
 }
 
 .link{
