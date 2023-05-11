@@ -26,7 +26,7 @@ function SignUpPage() {
             e.preventDefault()
             setEmpId(e.target.value)
           } } /> 
-          <SelectDepartment props={setDepartment} />
+          <SelectDepartment setDepartment={setDepartment} />
           <input type="text" placeholder='Email' value={email} onChange={(e) =>{
             e.preventDefault()
             setEmail(e.target.value)
