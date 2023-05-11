@@ -19,8 +19,12 @@ function ViewFiles(){
             accessor: "erpId"
         },
         {
-            Header : "Department",
+            Header : "Current Department",
             accessor: "department"
+        },
+        {
+            Header : "Created Department",
+            accessor: "createdDepartment"
         },
         {
             Header: "Created By",

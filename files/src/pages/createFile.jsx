@@ -49,6 +49,7 @@ function CreateFile(props) {
                   fileId : `${Date().split(' ')[3]}_${fileCount + 1}`,
                    filename : filename,
                    erpId : erpId,
+                   createdDepartment: localStorage.getItem('department'),
                    department : department,
                    createdBy : username
                 })

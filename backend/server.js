@@ -129,9 +129,10 @@ pool.getConnection((err, db) => {
         const fileId = data.fileId
         const filename = data.filename
         const erpId = data.erpId
+        const createdDepartment = data.createdDepartment
         const department = data.department
         const createdBy = data.createdBy
-        const sql = `insert into files(fileId,filename ,erpId ,department ,createdDate, createdBy) values("${fileId}","${filename}","${erpId}","${department}",NOW(),"${createdBy}") `
+        const sql = `insert into files(fileId,filename ,erpId ,department,createdDepartment ,createdDate, createdBy) values("${fileId}","${filename}","${erpId}","${department}","${createdDepartment}",NOW(),"${createdBy}") `
         db.query(sql, (err,result)=>{
             if(err){
                 return res.send({
