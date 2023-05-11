@@ -1,15 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {useNavigate} from  'react-router-dom'
 import { FaRegWindowClose } from 'react-icons/fa'
 
 function Settings ({openModal})  {
     const navigate = useNavigate()
+    const [imageText, setImageText] = useState()
+    const [data, setData] = useState([])
     return (
         <div className="prompt-main">
             <button onClick={()=>openModal(false)} className="closeBtn" ><FaRegWindowClose /></button>
             <div className="prompt-container">
             <div className="prompt-title">
-                    <h2>Settings</h2>
+                    <h1>Settings</h1>
                     <div className="actions">
                         <button className="actionBtn" onClick={()=> {
                             localStorage.clear()
@@ -19,28 +21,33 @@ function Settings ({openModal})  {
                     </div>    
                 </div>
                 <div className="prompt-body">
-                    <div className="userDetails">
-                        <h2>Update Details</h2>
-                        <span>Update Username</span>
-                        <input type="text" placeholder='New Username' onChange={(e)=> {
-                            e.preventDefault()
-                            fetch('http://localhost:8081/executeQuery',{
-                                method: 'POST',
-                                headers: {
-                                    'Accept': 'application/json, text/plain, */*',
-                                    'Content-Type': 'application/json'
-                                  },
-                                body: JSON.stringify({
-                                    command: `update users set username : "${e.target.value}" where empId = "${localStorage.get('empId')}" `
-                                })
-                            })
-                        }} />
-                    </div>
-                    {/* <div className="appearance">
+                    <div className="appearance">
                         <h2>Appearance</h2>
-                        <span>Change Background Image</span>
-                        <input type="file"  name="Background image" id="bgImage" />
-                    </div> */}
+                        <h3>Change Background Image</h3>
+                        <div className="searchFeild">
+                            <input type="text" className="imageSearch" placeholder='search for backgrounds' onChange={(e)=>{
+                                e.preventDefault()
+                                setImageText(e.target.value)
+                            }} />
+                            <button type="submit" className="actionBtn" onClick={()=>{
+                                fetch(`https://api.unsplash.com/search/photos?page=1&query=${imageText}&client_id=IwjXXsFNOcP3vEfLGDapztx8zK0mzxx4UTanekOC4kY`)
+                                .then(res => res.json())
+                                .then(result => setData(result.results))
+                            }} >Search</button>
+                        </div>
+                        <div className="searchResults">
+                            {data.map((item,index)=>{
+                                    return <div className="images" onClick={()=>{
+                                        localStorage.setItem('bgImage' , item.urls.full)
+                                        document.body.style.backgroundImage = `url("${item.urls.full}")`
+                                        // window.location.reload()
+                                    }} key={index}>
+                                        <img src={item.urls.thumb} />
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
                 </div>
 
             </div>

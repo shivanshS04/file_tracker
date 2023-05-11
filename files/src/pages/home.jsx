@@ -32,8 +32,11 @@ function Home () {
         })
     })
     const navigate = useNavigate();
+    localStorage.getItem('bgImage')
+    ?document.body.style.backgroundImage = `url("${localStorage.getItem('bgImage')}")`
+    :(console.log('no bgImage found'));
     return (        
-        <div className="main">
+        <div className="main"  >
             <div className="sidebar">
                 <h2 className="title">Files</h2>
                 <div className="links">

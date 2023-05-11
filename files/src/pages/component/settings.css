@@ -101,3 +101,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+
+.searchResults{
+    display: grid;
+
+}
