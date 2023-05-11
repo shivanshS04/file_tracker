@@ -4,9 +4,12 @@ import {FaRegWindowClose , FaArrowRight ,FaBook,FaFileAlt} from 'react-icons/fa'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import {format } from 'date-fns'
+import SelectDepartment from './selectDepartment'
 
 function FileDetails({ openModal, props}) {
     const [data, setData] = useState([])
+    const [forwardDiv , setForwardDiv] = useState(false)
+    const [forwardDepartment , setForwardDepartment] = useState()
     useEffect(() => {
         fetch('http://localhost:8081/executeQuery',{
                 method: 'POST',
@@ -33,27 +36,45 @@ function FileDetails({ openModal, props}) {
                     </div>
                     <div className="actions">
                         <button className="actionBtn" disabled={props.department.toLowerCase() != localStorage.getItem('department').toLowerCase()} onClick={()=> {
-                            fetch('http://localhost:8081/files/forward',{
-                                method: 'POST',
-                                headers: {
-                                    'Accept': 'application/json, text/plain, */*',
-                                    'Content-Type': 'application/json'
-                                },
-                                body : JSON.stringify({
-                                    fileId : props.fileId,
-                                    fromDepartment : localStorage.getItem('department'),
-                                    toDepartment : "president"
-                                })
-                            }).then((res) => {
-                                if(res.status == 200){
-                                  window.location.reload()
-                            }else{
-                                alert('File Forwarding Failed')
-                            }
-                        })
-
+                            setForwardDiv(!forwardDiv)
                         }} >Forward  <FaArrowRight /></button>
                         <button className="actionBtn" disabled onClick={()=> alert("This button's functionality is yet to be added !")}>Shelf  <FaBook /></button>
+                        
+                        { forwardDiv &&  <div className="forward">
+                        <SelectDepartment setDepartment={setForwardDepartment} />
+                            <button 
+                                type="submit" 
+                                className="actionBtn" 
+                                onClick={()=> {
+                                    if(forwardDepartment)
+                                    {fetch('http://localhost:8081/files/forward',{
+                                        method: 'POST',
+                                        headers: {
+                                            'Accept': 'application/json, text/plain, */*',
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body : JSON.stringify({
+                                            fileId : props.fileId,
+                                            fromDepartment : localStorage.getItem('department'),
+                                            toDepartment : forwardDepartment
+                                        })
+                                    }).then((res) => {
+                                        if(res.status == 200){
+                                          window.location.reload()
+                                    }else{
+                                        alert('File Forwarding Failed')
+                                    }
+                                })
+        
+                                }
+                                else{
+                                    alert('Please select department !')
+                                }
+                                }} >
+                                Forward
+                            </button>
+                        </div>}
+                    
                     </div>    
                 </div>
                 <div className="prompt-body">
