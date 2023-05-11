@@ -1,0 +1,48 @@
+.dashboard h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 12px;
+    font-weight: 500;
+}
+
+.categories{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.allFilesCard, .inbox , .outbox  {
+    background-color: wheat;
+    border-radius : 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    transition: all 150ms linear;
+}
+
+
+
+.viewBtn {
+    font-weight: 100;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+.allFilesCard:hover ,.inbox:hover , .outbox:hover {
+    box-shadow: 0px 0px ;
+    transform: translate3d(10px,10px,0px);
+}

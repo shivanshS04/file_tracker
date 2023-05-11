@@ -1,0 +1,56 @@
+body{
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flatcard{
+    position: fixed;
+    top: 15%;
+    left: 30%;
+    box-shadow: 50px;
+    
+    background : linear-gradient(
+        to right bottom,
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3)
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.homeBtn{
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid;
+    width: 60%;
+    height:40px;
+    background-color: black;
+    color: wheat;
+    font-size: 15px;
+    font-family: 'Segoe UI';
+    text-align: center;
+    cursor: pointer;
+    transition: all 150ms linear;
+}
+
+.homeBtn:hover{
+    background-color: wheat ;
+    color: black;
+    border: 3px solid black ;
+    box-shadow: 10px 10px black;
+}
+

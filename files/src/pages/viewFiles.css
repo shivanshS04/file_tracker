@@ -1,0 +1,95 @@
+.main{
+    margin: 10px;
+    
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+} 
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  table tr:nth-child(odd){background-color: #f2f2f2;}
+  table tr:nth-child(even){background-color: rgb(215, 190, 141);}
+  
+  tr{
+    text-overflow: ellipsis;
+  }
+
+  table tbody tr:hover {
+    cursor: pointer;
+    transition: all 50ms linear;
+    transform: translate3d(-5px,-5px,5px);
+    box-shadow: 5px 5px 5px  grey ;
+}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(208, 159, 69);
+    color: white;
+  }
+
+.paginationBtn{
+    font-weight: 100;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 10px;
+    cursor:pointer;
+    margin : 10px;
+}
+
+.paginationBtn:hover{
+  background-color:black;
+  color:wheat;
+}
+
+
+/* .fileCard{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border-radius: 8px;
+    align-items:center;
+    float: left;
+    width: 30%;
+    height: 200px;
+    background-color:wheat;
+    color: black;
+    margin:8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fileCard button{
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 10px;
+    margin:7px;
+}
+
+.fileCard button:hover{
+    background-color: black;
+    color: wheat;
+}
+.fileCard:hover{
+    box-shadow : 5px 5px rgb(192, 147, 88);
+    transform: translate3d(-5px,-5px,0px);
+} */

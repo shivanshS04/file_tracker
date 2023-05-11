@@ -1,0 +1,43 @@
+.main{
+    margin: 10px;
+    padding: 10px;
+}
+.main h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.fileCard{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border-radius: 8px;
+    align-items:center;
+    float: left;
+    width: 30%;
+    height: 200px;
+    background-color:wheat;
+    color: black;
+    margin:8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fileCard button{
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 6px;
+    border-radius: 10px;
+    margin:7px;
+}
+
+.fileCard button:hover{
+    background-color: black;
+    color: wheat;
+}
+.fileCard:hover{
+    box-shadow : 5px 5px rgb(192, 147, 88);
+    transform: translate3d(-5px,-5px,0px);
+}

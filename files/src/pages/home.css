@@ -1,0 +1,99 @@
+
+.main{
+    display: inline-block;
+    direction: ltr;
+}
+.sidebar{
+    padding-left: 8px;
+    padding-right: 8px;
+    border-top-right-radius: 20px ;
+    border-bottom-right-radius: 20px ;
+    opacity: 0.7;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top:0;
+    left:0;
+    margin: 0;
+    background : linear-gradient(
+        to right bottom,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.3)
+    );
+    color:wheat;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.links{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.link{
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    text-decoration:none;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+
+.settings{
+    background-color: black;
+    text-decoration: none;
+    cursor: pointer;
+    width: 17%;
+    border-radius: 15px;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    margin:10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+
+}
+
+.settings:hover{
+    background-color: wheat;
+    color:black;
+    box-shadow: -4.5px 6px grey;
+}
+
+.content{
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 78%;
+    background : linear-gradient(
+        to right bottom  , 
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.8)
+
+    );
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.content::-webkit-scrollbar{
+    display: none;
+}
+
+
+h1{
+    float: left;
+    margin-left: 20px;
+}
+
+button{
+    transition: all 150ms linear;
+}
